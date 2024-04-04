@@ -50,8 +50,7 @@ slider.addEventListener("input", function() {
 	var name=document.querySelector('#mute');
     var value = slider.value;
     console.log("Current value:", value);
-	if(name.textContent==="Unmute"){}
-	else{document.querySelector("video").volume=value/100;}
+	document.querySelector("video").volume=value/100;
 	document.querySelector("#volume").textContent=value+"%";
 });
 
