@@ -47,9 +47,11 @@ document.querySelector("#skip").addEventListener("click",function(){
 var slider = document.getElementById("slider");
 
 slider.addEventListener("input", function() {
+	var name=document.querySelector('#mute');
     var value = slider.value;
     console.log("Current value:", value);
-	document.querySelector("video").volume=value/100;
+	if(name.textContent==="Unmute"){}
+	else{document.querySelector("video").volume=value/100;}
 	document.querySelector("#volume").textContent=value+"%";
 });
 
