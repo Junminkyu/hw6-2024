@@ -49,6 +49,9 @@ var slider = document.getElementById("slider");
 slider.addEventListener("input", function() {
 	var name=document.querySelector('#mute');
     var value = slider.value;
+	if(document.querySelector("#mute").textContent==="Unmute"){
+		document.querySelector("#mute").textContent="Mute";
+	}
     console.log("Current value:", value);
 	document.querySelector("video").volume=value/100;
 	document.querySelector("#volume").textContent=value+"%";
