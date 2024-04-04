@@ -1,11 +1,9 @@
 var video;
 
-
-
-
 window.addEventListener("load", function() {
-	console.log("Good job opening the window")
-
+	var vid=document.querySelector("video");
+	vid.autoplay=false;
+	vid.loop=false;
 });
 
 document.querySelector("#play").addEventListener("click", function() {
@@ -71,7 +69,6 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#vintage").addEventListener("click",function(){
 	var vid=document.querySelector('video');
 	console.log("to Original");
-	vid.classList.remove("video");
 	vid.classList.add("oldSchool");
 });
 
@@ -79,5 +76,4 @@ document.querySelector("#orig").addEventListener("click",function(){
 	var vid=document.querySelector('video');
 	console.log("Back to Normal");
 	vid.classList.remove("oldSchool");
-	vid.classList.add("video");
 });
