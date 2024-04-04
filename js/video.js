@@ -49,9 +49,6 @@ var slider = document.getElementById("slider");
 slider.addEventListener("input", function() {
 	var name=document.querySelector('#mute');
     var value = slider.value;
-	if(document.querySelector("#mute").textContent==="Unmute"){
-		document.querySelector("#mute").textContent="Mute";
-	}
     console.log("Current value:", value);
 	document.querySelector("video").volume=value/100;
 	document.querySelector("#volume").textContent=value+"%";
@@ -60,12 +57,13 @@ slider.addEventListener("input", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	let name=document.querySelector("#mute");
 	if(name.textContent==="Mute"){
-		document.querySelector("video").volume=0;
+		document.querySelector("video").muted=true;
 		name.textContent="Unmute";
 	}
 	else{
 		var value=slider.value;
-		document.querySelector("video").volume=value/100;
+		document.querySelector("video").muted=false;
+		// document.querySelector("video").volume=value/100;
 		name.textContent="Mute";
 	}
 });
